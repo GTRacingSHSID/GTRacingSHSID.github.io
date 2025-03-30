@@ -1350,4 +1350,17 @@ footer {
     .car-overview-content {
         gap: 30px;
     }
+}
+
+.engineering-section {
+    padding: 120px 0;
+    background-color: var(--primary-color);
+}
+
+.engineering-section .container {
+    padding: 0 40px;
+}
+
+.engineering-section .section-heading {
+    margin-bottom: 60px;
 } 

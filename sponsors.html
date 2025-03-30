@@ -47,12 +47,11 @@
         
         .partner-category h2 {
             color: var(--text-color);
-            font-size: 1.6rem;
-            margin-bottom: 50px;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
             text-align: left;
             font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
         
         .partner-category h2:after {
@@ -151,17 +150,37 @@
             background-color: #000;
             padding: 120px 0 80px;
             margin-bottom: 0;
-            text-align: center;
+            text-align: left;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .page-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .page-hero .container {
+            padding-left: 50px;
         }
         
         .page-hero h1 {
-            font-size: 4rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-family: 'Lora', serif;
+            font-size: 3.5rem;
+            letter-spacing: 1px;
+            text-transform: none;
             font-weight: 600;
             opacity: 0;
             animation: fadeIn 1s ease forwards;
             margin: 0;
+            position: relative;
+            color: #fff;
         }
         
         .sponsors-overview {
@@ -282,10 +301,14 @@
                 <h2>Principal Partner</h2>
                 <div class="sponsor-logo-grid">
                     <div class="sponsor-logo">
-                        <img src="GT Sponsor/xietaitai.pic.jpg" alt="蟹太太 (Xie Tai Tai)">
+                        <a href="https://www.xfgshop.com" target="_blank">
+                            <img src="GT Sponsor/xietaitai.pic.jpg" alt="蟹太太 (Xie Tai Tai)">
+                        </a>
                     </div>
                     <div class="sponsor-logo">
-                        <img src="GT Sponsor/yiche_shake.jpg" alt="易车鲨壳 (Yiche Shake)">
+                        <a href="https://shakeppf.com" target="_blank">
+                            <img src="GT Sponsor/yiche_shake.jpg" alt="易车鲨壳 (Yiche Shake)">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -295,10 +318,14 @@
                 <h2>China Round Sponsors</h2>
                 <div class="sponsor-logo-grid">
                     <div class="sponsor-logo">
-                        <img src="GT Sponsor/skt.pic.jpg" alt="SKT">
+                        <a href="https://www.sktedu.com/#/index" target="_blank">
+                            <img src="GT Sponsor/skt.pic.jpg" alt="SKT">
+                        </a>
                     </div>
                     <div class="sponsor-logo">
-                        <img src="GT Sponsor/skt_nsl.pic.jpg" alt="SKT-NSL">
+                        <a href="https://www.webloom.cn/bloom_web/#/GameData/NSL?contestId=1017697405835063297&seasonId=1517687156498460672" target="_blank">
+                            <img src="GT Sponsor/skt_nsl.pic.jpg" alt="SKT-NSL">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -308,16 +335,24 @@
                 <h2>Global Round Sponsors</h2>
                 <div class="sponsor-logo-grid">
                     <div class="sponsor-logo">
-                        <img src="GT Sponsor/charlotte_motor_speedway.pic.jpg" alt="Charlotte Motor Speedway">
+                        <a href="https://www.charlottemotorspeedway.com" target="_blank">
+                            <img src="GT Sponsor/charlotte_motor_speedway.pic.jpg" alt="Charlotte Motor Speedway">
+                        </a>
                     </div>
                     <div class="sponsor-logo">
-                        <img src="GT Sponsor/analog_devices.pic.jpg" alt="Analog Devices">
+                        <a href="https://www.analog.com" target="_blank">
+                            <img src="GT Sponsor/analog_devices.pic.jpg" alt="Analog Devices">
+                        </a>
                     </div>
                     <div class="sponsor-logo">
-                        <img src="GT Sponsor/ten80.pic.jpg" alt="Ten80">
+                        <a href="https://www.ten80education.com" target="_blank">
+                            <img src="GT Sponsor/ten80.pic.jpg" alt="Ten80">
+                        </a>
                     </div>
                     <div class="sponsor-logo">
-                        <img src="GT Sponsor/mouser_electronics.pic.jpg" alt="Mouser Electronics">
+                        <a href="https://www.mouser.com" target="_blank">
+                            <img src="GT Sponsor/mouser_electronics.pic.jpg" alt="Mouser Electronics">
+                        </a>
                     </div>
                 </div>
             </div>
