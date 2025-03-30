@@ -1,0 +1,1353 @@
+/* Global Styles */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #212121;
+    --accent-color: #D4AF37;
+    --text-color: #ffffff;
+    --light-gray: #f0f0f0;
+    --dark-gray: #333333;
+    --font-heading: 'Lora', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-subheading: 'Aptos', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    line-height: 1.6;
+    padding-top: 80px;
+}
+
+.container {
+    width: 85%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background-color: var(--accent-color);
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+.button-primary {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.button-primary:hover {
+    background-color: #ffffff;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    list-style: none;
+}
+
+.nav-left li, .nav-right li {
+    margin: 0 15px;
+}
+
+.nav-left li a, .nav-right li a {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-left li a:hover, .nav-right li a:hover, 
+.nav-left li a.active, .nav-right li a.active {
+    color: var(--accent-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--primary-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: -80px;
+}
+
+.hero-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+/* About Section */
+.about-section {
+    padding: 100px 0;
+    background-color: var(--secondary-color);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-subtitle {
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Racing Section */
+.racing-section {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+}
+
+.racing-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.racing-text {
+    flex: 1;
+}
+
+.racing-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Subteams Section */
+.subteams-section {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-member {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.member-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.member-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.member-name {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.member-photo {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.member-photo img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.team-member h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.team-cta {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* News Section */
+.news-section {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.news-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+}
+
+.news-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-date {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.news-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.news-excerpt {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* Partners Section */
+.partners-section {
+    padding: 100px 0;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+    justify-items: center;
+}
+
+.partner-logo {
+    background-color: white;
+    padding: 15px;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.partner-logo img {
+    max-height: 80px;
+    max-width: 80%;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+}
+
+.contact-content {
+    display: flex;
+    gap: 50px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-form {
+    flex: 1;
+}
+
+.contact-form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-input, .contact-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.contact-textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    padding: 50px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.footer-links {
+    display: flex;
+    gap: 50px;
+}
+
+.footer-column h4 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-column p {
+    margin-bottom: 10px;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid var(--dark-gray);
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Page Hero */
+.page-hero {
+    background-color: var(--primary-color);
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    z-index: 1;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero h1 {
+    font-size: 5rem;
+    color: var(--text-color);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+/* Racing Page Specific Styles */
+.racing-content {
+    padding: 80px 0;
+}
+
+.racing-image-large {
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.racing-info {
+    margin-bottom: 50px;
+}
+
+.achievements {
+    margin-bottom: 50px;
+}
+
+.achievement-timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.achievement-year {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-right: 20px;
+    min-width: 80px;
+}
+
+.upcoming-races {
+    margin-top: 50px;
+}
+
+.race-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.race-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.race-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.race-details {
+    padding: 20px;
+}
+
+.race-details h3 {
+    margin-bottom: 10px;
+}
+
+/* Team Page Specific Styles */
+.team-structure {
+    padding: 80px 0;
+    background-color: var(--primary-color);
+}
+
+.department-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.department-card {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.department-card:hover {
+    transform: translateY(-10px);
+}
+
+.department-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.department-card h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.department-card p {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.team-members-section {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.team-member {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+}
+
+.member-photo {
+    width: 100%;
+    overflow: hidden;
+}
+
+.member-photo img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.team-member:hover .member-photo img {
+    transform: scale(1.05);
+}
+
+.team-member h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding: 0 10px;
+    font-size: 1.2rem;
+}
+
+.team-member p {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+.subteam {
+    margin-bottom: 60px;
+}
+
+.subteam h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--accent-color);
+}
+
+/* Sponsors Page Specific Styles */
+.sponsors-overview {
+    padding: 80px 0;
+}
+
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.sponsors-grid.large {
+    grid-template-columns: 1fr 1fr;
+}
+
+.sponsor-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 30px;
+}
+
+.sponsor-logo {
+    background-color: white;
+    padding: 15px;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.sponsor-logo img {
+    max-height: 80px;
+    max-width: 80%;
+    width: auto;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.sponsor-logo:hover img {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.sponsor-info h3 {
+    margin-bottom: 5px;
+}
+
+.sponsor-info p {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.sponsor-desc {
+    margin-bottom: 20px;
+}
+
+.sponsor-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.sponsor-link i {
+    margin-left: 5px;
+    transition: transform 0.3s;
+}
+
+.sponsor-link:hover i {
+    transform: translateX(5px);
+}
+
+.all-partners {
+    padding: 80px 0;
+    background-color: var(--primary-color);
+}
+
+.partner {
+    text-align: center;
+}
+
+.partner-logo {
+    background-color: white;
+    padding: 15px;
+    border-radius: 0;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.partner-logo img {
+    max-height: 80px;
+    max-width: 80%;
+    width: auto;
+}
+
+.partner-name {
+    color: var(--accent-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partner-name i {
+    margin-left: 5px;
+    font-size: 0.8rem;
+}
+
+.sponsor-benefits {
+    padding: 80px 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.benefit {
+    text-align: center;
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.become-sponsor {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.become-sponsor h3 {
+    margin-bottom: 10px;
+}
+
+.become-sponsor p {
+    margin-bottom: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+    
+    .nav-left, .nav-right {
+        margin: 10px 0;
+    }
+    
+    .logo {
+        order: -1;
+        margin-bottom: 15px;
+    }
+    
+    .about-content, 
+    .racing-content,
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sponsors-grid.large {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        margin-bottom: 30px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .container {
+        width: 92%;
+        padding: 0 15px;
+    }
+    
+    .department-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .team-members {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+    }
+    
+    .team-member h4 {
+        font-size: 1rem;
+    }
+    
+    .subteam h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.team-member {
+    text-align: center;
+    background-color: transparent;
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+/* Team Members Section */
+.team-members-section {
+    padding: 80px 0;
+    background-color: var(--primary-color);
+}
+
+.team-members-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team-members-section h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.subteam {
+    margin-bottom: 60px;
+}
+
+.subteam h3 {
+    margin-bottom: 30px;
+    color: var(--accent-color);
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.team-member {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.member-photo {
+    width: 100%;
+    overflow: hidden;
+}
+
+.member-photo img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.team-member:hover .member-photo img {
+    transform: scale(1.05);
+}
+
+.team-member h4 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    padding: 0 10px;
+    font-size: 1.2rem;
+}
+
+.team-member p {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+/* Department Cards */
+.department-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.department-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.department-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.department-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.department-card h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.department-card p {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* Join Team CTA */
+.join-team-cta {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.join-team-cta h2 {
+    text-align: center;
+}
+
+.join-team-cta h2:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.join-team-cta p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .team-members {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 20px;
+    }
+    
+    .department-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-member h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Cars Page Styles */
+.car-hero {
+    background-image: url('assets/rc-car-racing.JPG');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: -80px;
+    overflow: hidden;
+}
+
+.car-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.4));
+    z-index: 1;
+}
+
+.car-hero .container {
+    position: relative;
+    z-index: 2;
+    padding-left: 5%;
+}
+
+.car-hero .hero-title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.car-hero .hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: var(--accent-color);
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-dark {
+    background-color: var(--secondary-color);
+}
+
+.car-overview-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.car-image-container {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.car-main-image {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.car-image-container:hover .car-main-image {
+    transform: scale(1.05);
+}
+
+.car-overview-text {
+    text-align: center;
+    max-width: 800px;
+}
+
+.enlarged-text {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.gold-button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.gold-button:hover {
+    background-color: #ffffff;
+    color: var(--primary-color);
+}
+
+.section-content {
+    margin: 60px 0;
+}
+
+.section-content.reversed .two-column-grid {
+    direction: rtl;
+}
+
+.two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.text-content, .image-container {
+    direction: ltr;
+}
+
+.left-aligned {
+    text-align: left;
+}
+
+.left-aligned::after {
+    margin: 20px 0 0;
+}
+
+.animated-image {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.animated-image img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.animated-image:hover img {
+    transform: scale(1.05);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.stat-card {
+    background-color: var(--secondary-color);
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-family: var(--font-heading);
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .car-hero .hero-title {
+        font-size: 3rem;
+    }
+    
+    .car-hero .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .two-column-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .section-content.reversed .two-column-grid {
+        direction: ltr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .car-overview-content {
+        gap: 30px;
+    }
+} 

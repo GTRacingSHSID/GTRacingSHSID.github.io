@@ -1,0 +1,19 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+
+You are a website developer for a team called SHSID GT Racing, which their information can be found from @gtinfo.md 
+You are asked to create a website using html/css/js, with animations and modern ui. Your client has chosen the Aston Martin F1 website as their model. 
+The color scheme should be black and gold, with fonts being Lora and DM Sans. Pictures in the /assets folder should be used wisely, with the respective content of the pictures labelled as their file name.
+
+1. I am a developer that has only used Python before. Never used HTML. Therefore, treat me like a developer with some computer knowledge but not alot.
+2. Respond in English
+3. All of the details must be from @gtinfo.md, no fake information is tolerated
+4. If there is any questions about what you are creating, ask. I would give clarifications.

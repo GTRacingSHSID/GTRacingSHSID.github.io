@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors - SHSID GT Racing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3b161c540c.js" crossorigin="anonymous"></script>
+    <style>
+        .sponsors-showcase {
+            background-color: #000;
+            padding: 80px 0;
+        }
+        
+        .partner-category {
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .partner-category:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .partner-category:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .partner-category:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .partner-category h2 {
+            color: var(--text-color);
+            font-size: 1.6rem;
+            margin-bottom: 50px;
+            text-align: left;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .partner-category h2:after {
+            width: 50px;
+            height: 3px;
+            left: 0;
+            bottom: -15px;
+        }
+        
+        .sponsor-logo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 60px;
+            width: 100%;
+        }
+        
+        .principal-partner .sponsor-logo {
+            max-width: 350px;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .principal-partner .sponsor-logo:first-child {
+            max-width: 400px; /* Make XTT logo bigger */
+        }
+        
+        .principal-partner .sponsor-logo:first-child img {
+            max-height: 120px; /* Make XTT logo bigger */
+        }
+        
+        .team-partners .sponsor-logo,
+        .team-suppliers .sponsor-logo {
+            flex: 0 0 calc(25% - 60px);
+            margin-bottom: 20px;
+        }
+        
+        .sponsor-logo {
+            background-color: #000;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            min-height: 80px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .sponsor-logo-grid .sponsor-logo:nth-child(1) { animation-delay: 0.1s; }
+        .sponsor-logo-grid .sponsor-logo:nth-child(2) { animation-delay: 0.2s; }
+        .sponsor-logo-grid .sponsor-logo:nth-child(3) { animation-delay: 0.3s; }
+        .sponsor-logo-grid .sponsor-logo:nth-child(4) { animation-delay: 0.4s; }
+        .sponsor-logo-grid .sponsor-logo:nth-child(5) { animation-delay: 0.5s; }
+        .sponsor-logo-grid .sponsor-logo:nth-child(6) { animation-delay: 0.6s; }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .sponsor-logo img {
+            max-width: 80%;
+            height: auto;
+            transition: all 0.3s ease;
+            object-fit: contain;
+            max-height: 60px;
+            opacity: 1;
+        }
+        
+        .sponsor-logo:hover img {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+        
+        .sponsor-benefits {
+            background-color: var(--secondary-color);
+            padding: 80px 0;
+        }
+        
+        .sponsor-cta {
+            background-color: var(--primary-color);
+            padding: 80px 0;
+        }
+        
+        .page-hero {
+            background-color: #000;
+            padding: 120px 0 80px;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 4rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            margin: 0;
+        }
+        
+        .sponsors-overview {
+            background-color: var(--secondary-color);
+            padding: 100px 0;
+        }
+        
+        .sponsors-overview h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+        
+        .sponsors-overview h2:after {
+            left: 0;
+        }
+        
+        .sponsors-overview p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .benefit-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+        
+        .benefit-icon {
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 992px) {
+            .team-partners .sponsor-logo,
+            .team-suppliers .sponsor-logo {
+                flex: 0 0 calc(33.33% - 60px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .team-partners .sponsor-logo,
+            .team-suppliers .sponsor-logo {
+                flex: 0 0 calc(50% - 60px);
+            }
+            
+            .page-hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .team-partners .sponsor-logo,
+            .team-suppliers .sponsor-logo,
+            .principal-partner .sponsor-logo {
+                flex: 0 0 calc(100% - 30px);
+                margin: 0 auto 30px;
+            }
+            
+            .sponsor-logo-grid {
+                gap: 30px;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="nav-left">
+                    <li><a href="cars.html">Cars</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="GT Picture/gt-racing-logo.PNG" alt="GT Racing Logo">
+                    </a>
+                </div>
+                <ul class="nav-right">
+                    <li><a href="racing.html">Racing</a></li>
+                    <li><a href="sponsors.html" class="active">Sponsors</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sponsors Hero -->
+    <section class="page-hero" style="background-image: url('GT Picture/team-booth.JPG')">
+        <div class="container">
+            <h1>Sponsors</h1>
+        </div>
+    </section>
+
+    <!-- Sponsors Showcase -->
+    <section class="sponsors-showcase">
+        <div class="container">            
+            <!-- Principal Partner -->
+            <div class="partner-category principal-partner">
+                <h2>Principal Partner</h2>
+                <div class="sponsor-logo-grid">
+                    <div class="sponsor-logo">
+                        <img src="GT Sponsor/xietaitai.pic.jpg" alt="蟹太太 (Xie Tai Tai)">
+                    </div>
+                    <div class="sponsor-logo">
+                        <img src="GT Sponsor/yiche_shake.jpg" alt="易车鲨壳 (Yiche Shake)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Partners -->
+            <div class="partner-category team-partners">
+                <h2>China Round Sponsors</h2>
+                <div class="sponsor-logo-grid">
+                    <div class="sponsor-logo">
+                        <img src="GT Sponsor/skt.pic.jpg" alt="SKT">
+                    </div>
+                    <div class="sponsor-logo">
+                        <img src="GT Sponsor/skt_nsl.pic.jpg" alt="SKT-NSL">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Suppliers -->
+            <div class="partner-category team-suppliers">
+                <h2>Global Round Sponsors</h2>
+                <div class="sponsor-logo-grid">
+                    <div class="sponsor-logo">
+                        <img src="GT Sponsor/charlotte_motor_speedway.pic.jpg" alt="Charlotte Motor Speedway">
+                    </div>
+                    <div class="sponsor-logo">
+                        <img src="GT Sponsor/analog_devices.pic.jpg" alt="Analog Devices">
+                    </div>
+                    <div class="sponsor-logo">
+                        <img src="GT Sponsor/ten80.pic.jpg" alt="Ten80">
+                    </div>
+                    <div class="sponsor-logo">
+                        <img src="GT Sponsor/mouser_electronics.pic.jpg" alt="Mouser Electronics">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Overview -->
+    <section class="sponsors-overview">
+        <div class="container">
+            <h2>Our Sponsors</h2>
+            <p>GT Racing is supported by a range of sponsors who share our vision and values. Through their support, we are able to continue pushing the boundaries of RC racing technology and performance.</p>
+            <p>In the 2024-2025 season, we received valuable sponsorship that allowed us to allocate over ¥25,000 for innovating, maintaining, and improving our car design, as well as supporting our business operations. This funding is crucial for our continued success and growth.</p>
+        </div>
+    </section>
+
+    <!-- Sponsor Benefits -->
+    <section class="sponsor-benefits">
+        <div class="container">
+            <h2>Sponsor Benefits</h2>
+            <p>As a sponsor supporting GT Racing, you receive numerous benefits in return. These include:</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Brand Visibility</h3>
+                    <p>Logos featured on team jerseys, car shells, posters, booth decorations, and all competition-related products, exposing your brand to hundreds or thousands of people at every event.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Media Exposure</h3>
+                    <p>Video promotions on social media (Douyin, WeChat video channel), article promotions on our WeChat official account, and exposure through school official news. Our WeChat articles average 400+ views while Bilibili videos receive 300+ views.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Events</h3>
+                    <p>Presentation promotions inside and outside of school, as well as possible events or sharing sessions to help advertise your services or products to a targeted audience interested in STEM and racing.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Custom Collaborations</h3>
+                    <p>Additional needs or expectations from sponsors can be negotiated to create mutually beneficial partnerships that serve your specific marketing and community engagement goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor CTA -->
+    <section class="sponsor-cta">
+        <div class="container">
+            <h2>Join Our Journey</h2>
+            <p>We are currently seeking sponsorship of ¥30,000 to cover our budget for completing club-related purchases. This funding will not only support our team but assist our mission to build a community for students passionate about STEM subjects.</p>
+            <p>For the 2024-2025 season, we plan to allocate our funds to tool procurement, car components, team jerseys, marketing expenses, and other associated costs to enhance our team's performance in upcoming competitions.</p>
+            <a href="index.html#contact" class="button-primary">Become a Sponsor</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="GT Picture/gt-racing-logo.PNG" alt="GT Racing Logo">
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <p>Email: gtracingshsid@outlook.com</p>
+                        <p>Phone: +86 19901637898</p>
+                        <p>Address: Shangzhong Road Number 400</p>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Social</h4>
+                        <p>WeChat: zhihan_tonyxie</p>
+                        <p>Bilibili</p>
+                        <p>Douyin</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SHSID GT Racing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
