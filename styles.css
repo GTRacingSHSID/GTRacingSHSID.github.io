@@ -469,39 +469,62 @@ nav {
 /* Footer */
 footer {
     background-color: var(--secondary-color);
-    padding: 50px 0;
+    padding: 60px 0 30px;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 30px;
+    gap: 80px;
+}
+
+.footer-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-logo img {
-    height: 50px;
+    height: 90px;
     width: auto;
+    margin-bottom: 12px;
 }
 
-.footer-links {
+.team-name {
+    font-family: var(--font-body);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 5px;
+}
+
+.footer-contact {
     display: flex;
-    gap: 50px;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.footer-column h4 {
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item i {
     color: var(--accent-color);
-    margin-bottom: 20px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    width: 20px;
 }
 
-.footer-column p {
-    margin-bottom: 10px;
+.contact-item span {
+    font-size: 0.95rem;
 }
 
 .copyright {
     text-align: center;
-    border-top: 1px solid var(--dark-gray);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
     font-size: 0.9rem;
 }
@@ -924,17 +947,16 @@ footer {
     
     .footer-content {
         flex-direction: column;
-        align-items: center;
         text-align: center;
-    }
-    
-    .footer-logo {
-        margin-bottom: 30px;
-    }
-    
-    .footer-links {
-        flex-direction: column;
         gap: 30px;
+    }
+    
+    .footer-contact {
+        align-items: center;
+    }
+    
+    .contact-item {
+        justify-content: center;
     }
     
     .container {

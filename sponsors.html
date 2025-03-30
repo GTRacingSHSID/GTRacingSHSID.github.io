@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3b161c540c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         .sponsors-showcase {
             background-color: #000;
@@ -146,43 +147,6 @@
             padding: 80px 0;
         }
         
-        .page-hero {
-            background-color: #000;
-            padding: 120px 0 80px;
-            margin-bottom: 0;
-            text-align: left;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .page-hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-        }
-        
-        .page-hero .container {
-            padding-left: 50px;
-        }
-        
-        .page-hero h1 {
-            font-family: 'Lora', serif;
-            font-size: 3.5rem;
-            letter-spacing: 1px;
-            text-transform: none;
-            font-weight: 600;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards;
-            margin: 0;
-            position: relative;
-            color: #fff;
-        }
-        
         .sponsors-overview {
             background-color: var(--secondary-color);
             padding: 100px 0;
@@ -260,6 +224,188 @@
             
             .page-hero h1 {
                 font-size: 2.5rem;
+            }
+        }
+        
+        /* Budget Breakdown Styles */
+        .budget-breakdown {
+            background-color: #000;
+            padding: 80px 0;
+            color: var(--text-color);
+        }
+        
+        .budget-breakdown h2 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .budget-breakdown h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            left: 0;
+            bottom: -15px;
+        }
+        
+        .budget-breakdown p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 50px;
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .chart-wrapper {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px;
+            width: 100%;
+            height: 400px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-height: 400px;
+        }
+        
+        .chart-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .view-selector {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .chart-btn {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .chart-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .chart-btn.active {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #000;
+        }
+        
+        .budget-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .budget-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 25px;
+            display: none;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .budget-item.active {
+            display: block;
+        }
+        
+        .budget-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+        
+        .budget-amount {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+        
+        .budget-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .budget-item li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        .budget-item li:last-child {
+            border-bottom: none;
+        }
+        
+        .budget-item li span {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .chart-wrapper {
+                height: 350px;
+                padding: 20px;
+            }
+            
+            .chart-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .budget-item h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .chart-wrapper {
+                height: 300px;
+                padding: 15px;
+            }
+            
+            .view-selector {
+                flex-direction: column;
+                gap: 5px;
+                width: 100%;
+            }
+            
+            .chart-btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .budget-item h3 {
+                font-size: 1.2rem;
+                flex-direction: column;
+                gap: 5px;
             }
         }
     </style>
@@ -407,13 +553,68 @@
         </div>
     </section>
 
+    <!-- Budget Breakdown -->
+    <section class="budget-breakdown">
+        <div class="container">
+            <h2>Season Budget Breakdown</h2>
+            <p>Our estimated budget for the 2024-2025 season is ¥25,350. Here's how we plan to allocate these funds:</p>
+            
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <canvas id="budgetChart"></canvas>
+                </div>
+                <div class="chart-controls">
+                    <div class="view-selector">
+                        <button class="chart-btn active" data-chart="category">By Category</button>
+                        <button class="chart-btn" data-chart="item">By Item</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="budget-details">
+                <div class="budget-item active" data-category="rc-car">
+                    <h3>RC Car <span class="budget-amount">¥8,000</span></h3>
+                    <ul>
+                        <li>RC Car <span>¥3,000</span></li>
+                        <li>RC Car Frame <span>¥3,000</span></li>
+                        <li>Titanium + Carbon Fiber Parts <span>¥2,000</span></li>
+                    </ul>
+                </div>
+                <div class="budget-item" data-category="pr-business">
+                    <h3>Public Relations / Business <span class="budget-amount">¥6,500</span></h3>
+                    <ul>
+                        <li>Team Jerseys <span>¥1,000</span></li>
+                        <li>Booth Decoration <span>¥2,000</span></li>
+                        <li>Merchandise and Gifts <span>¥1,000</span></li>
+                        <li>Business Backup Budget <span>¥2,000</span></li>
+                        <li>Material Delivery Fee <span>¥500</span></li>
+                    </ul>
+                </div>
+                <div class="budget-item" data-category="mod-maintenance">
+                    <h3>Mod & Maintenance <span class="budget-amount">¥10,850</span></h3>
+                    <ul>
+                        <li>Car Shell + Spray Paint <span>¥1,800</span></li>
+                        <li>Battery <span>¥2,000</span></li>
+                        <li>Power Unit Modification <span>¥2,500</span></li>
+                        <li>Suspension <span>¥1,000</span></li>
+                        <li>Transmission <span>¥1,200</span></li>
+                        <li>Backup Tools <span>¥1,000</span></li>
+                        <li>Vehicle Handbag <span>¥400</span></li>
+                        <li>Electric Drill+Bit <span>¥800</span></li>
+                        <li>Electric Grinder <span>¥200</span></li>
+                        <li>General screws (m3, m4) <span>¥150</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sponsor CTA -->
     <section class="sponsor-cta">
         <div class="container">
             <h2>Join Our Journey</h2>
-            <p>We are currently seeking sponsorship of ¥30,000 to cover our budget for completing club-related purchases. This funding will not only support our team but assist our mission to build a community for students passionate about STEM subjects.</p>
+            <p>We are currently seeking sponsorship of ¥25350 to cover our budget for completing club-related purchases. This funding will not only support our team but assist our mission to build a community for students passionate about STEM subjects.</p>
             <p>For the 2024-2025 season, we plan to allocate our funds to tool procurement, car components, team jerseys, marketing expenses, and other associated costs to enhance our team's performance in upcoming competitions.</p>
-            <a href="index.html#contact" class="button-primary">Become a Sponsor</a>
         </div>
     </section>
 
@@ -421,21 +622,24 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="GT Picture/gt-racing-logo.PNG" alt="GT Racing Logo">
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Contact</h4>
-                        <p>Email: gtracingshsid@outlook.com</p>
-                        <p>Phone: +86 19901637898</p>
-                        <p>Address: Shangzhong Road Number 400</p>
+                <div class="footer-branding">
+                    <div class="footer-logo">
+                        <img src="GT Picture/gt-racing-logo.png" alt="GT Racing Logo">
                     </div>
-                    <div class="footer-column">
-                        <h4>Social</h4>
-                        <p>WeChat: zhihan_tonyxie</p>
-                        <p>Bilibili</p>
-                        <p>Douyin</p>
+                    <div class="team-name">SHSID GT Racing</div>
+                </div>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>gtracingshsid@outlook.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+86 19901637898</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>400 Zhongxing Building B201, 400 Shangzhong Rd, Shanghai, China</span>
                     </div>
                 </div>
             </div>
@@ -446,5 +650,239 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Budget data
+            const budgetData = {
+                categories: {
+                    labels: ['RC Car', 'Public Relations / Business', 'Mod & Maintenance'],
+                    data: [8000, 6500, 10850],
+                    backgroundColor: [
+                        'rgba(255, 215, 0, 0.8)',  // Gold
+                        'rgba(229, 183, 59, 0.8)', // Lighter gold
+                        'rgba(184, 134, 11, 0.8)'  // Darker gold
+                    ],
+                    borderColor: [
+                        'rgba(255, 215, 0, 1)',
+                        'rgba(229, 183, 59, 1)',
+                        'rgba(184, 134, 11, 1)'
+                    ]
+                },
+                items: {
+                    labels: [
+                        'RC Car', 'RC Car Frame', 'Titanium + Carbon Fiber Parts',
+                        'Team Jerseys', 'Booth Decoration', 'Merchandise and Gifts', 'Business Backup Budget', 'Material Delivery Fee',
+                        'Car Shell + Spray Paint', 'Battery', 'Power Unit Modification', 'Suspension', 'Transmission',
+                        'Backup Tools', 'Vehicle Handbag', 'Electric Drill+Bit', 'Electric Grinder', 'General screws (m3, m4)'
+                    ],
+                    data: [
+                        3000, 3000, 2000,
+                        1000, 2000, 1000, 2000, 500,
+                        1800, 2000, 2500, 1000, 1200, 1000, 400, 800, 200, 150
+                    ],
+                    backgroundColor: Array(18).fill().map((_, i) => {
+                        // Create gold gradient
+                        const goldBase = 215;
+                        const goldVariation = Math.floor(goldBase * (0.7 + (i * 0.02)));
+                        return `rgba(255, ${goldVariation}, 0, 0.8)`;
+                    }),
+                    borderColor: Array(18).fill().map((_, i) => {
+                        const goldBase = 215;
+                        const goldVariation = Math.floor(goldBase * (0.7 + (i * 0.02)));
+                        return `rgba(255, ${goldVariation}, 0, 1)`;
+                    })
+                }
+            };
+            
+            // Chart configuration
+            const ctx = document.getElementById('budgetChart').getContext('2d');
+            let currentChart = null;
+            let currentView = 'category';
+            
+            // Function to create/update the chart
+            function createChart(view) {
+                const data = budgetData[view === 'category' ? 'categories' : 'items'];
+                
+                // Destroy previous chart if it exists
+                if (currentChart) {
+                    currentChart.destroy();
+                }
+                
+                // Create new chart
+                currentChart = new Chart(ctx, {
+                    type: view === 'category' ? 'pie' : 'bar',
+                    data: {
+                        labels: data.labels,
+                        datasets: [{
+                            label: 'Budget (¥)',
+                            data: data.data,
+                            backgroundColor: data.backgroundColor,
+                            borderColor: data.borderColor,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: view === 'category' ? 'right' : 'top',
+                                labels: {
+                                    color: '#ffffff',
+                                    font: {
+                                        family: 'DM Sans',
+                                        size: 12
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const label = context.label || '';
+                                        const value = context.raw || 0;
+                                        return label + ': ¥' + value.toLocaleString();
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                display: view !== 'category',
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.1)'
+                                },
+                                ticks: {
+                                    color: '#ffffff',
+                                    font: {
+                                        family: 'DM Sans'
+                                    }
+                                }
+                            },
+                            y: {
+                                display: view !== 'category',
+                                grid: {
+                                    color: 'rgba(255, 255, 255, 0.1)'
+                                },
+                                ticks: {
+                                    color: '#ffffff',
+                                    callback: function(value) {
+                                        return '¥' + value;
+                                    },
+                                    font: {
+                                        family: 'DM Sans'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Initialize the chart with the category view
+            createChart('category');
+            
+            // Add event listeners to the view selector buttons
+            document.querySelectorAll('.chart-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const view = this.dataset.chart;
+                    
+                    if (view !== currentView) {
+                        // Update active button
+                        document.querySelectorAll('.chart-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Update chart
+                        createChart(view);
+                        currentView = view;
+                        
+                        // Update budget detail visibility
+                        document.querySelectorAll('.budget-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        
+                        if (view === 'category') {
+                            document.querySelector('.budget-item[data-category="rc-car"]').classList.add('active');
+                        }
+                    }
+                });
+            });
+            
+            // Add event listeners to show detailed budget items on pie chart segment click
+            document.getElementById('budgetChart').addEventListener('click', function(evt) {
+                // Only handle clicks when in category view
+                if (currentView !== 'category') return;
+                
+                const activePoints = currentChart.getElementsAtEventForMode(
+                    evt, 'nearest', { intersect: true }, false
+                );
+                
+                if (activePoints.length > 0) {
+                    const clickedIndex = activePoints[0].index;
+                    const categories = ['rc-car', 'pr-business', 'mod-maintenance'];
+                    const categoryName = categories[clickedIndex];
+                    
+                    // Hide all budget items
+                    document.querySelectorAll('.budget-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Show the clicked category's budget details
+                    document.querySelector(`.budget-item[data-category="${categoryName}"]`).classList.add('active');
+                }
+            });
+
+            // Debug the chart
+            console.log('Chart initialization completed');
+            console.log('Chart instance:', currentChart);
+            
+            // Force chart redraw with timeout
+            setTimeout(() => {
+                console.log('Attempting chart redraw');
+                if (currentChart) {
+                    currentChart.update();
+                    console.log('Chart updated');
+                } else {
+                    console.log('Creating fallback chart');
+                    // Simple fallback chart
+                    new Chart(document.getElementById('budgetChart').getContext('2d'), {
+                        type: 'pie',
+                        data: {
+                            labels: ['RC Car', 'Public Relations / Business', 'Mod & Maintenance'],
+                            datasets: [{
+                                label: 'Budget (¥)',
+                                data: [8000, 6500, 10850],
+                                backgroundColor: [
+                                    'rgba(255, 215, 0, 0.8)',
+                                    'rgba(229, 183, 59, 0.8)',
+                                    'rgba(184, 134, 11, 0.8)'
+                                ],
+                                borderColor: [
+                                    'rgba(255, 215, 0, 1)',
+                                    'rgba(229, 183, 59, 1)',
+                                    'rgba(184, 134, 11, 1)'
+                                ],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    position: 'right',
+                                    labels: {
+                                        color: '#ffffff'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                    console.log('Fallback chart created');
+                }
+            }, 1000);
+        });
+    </script>
 </body>
 </html> 
