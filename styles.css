@@ -6,9 +6,17 @@
     --text-color: #ffffff;
     --light-gray: #f0f0f0;
     --dark-gray: #333333;
-    --font-heading: 'Lora', serif;
+    --font-heading: 'Brice Semiexpanded', serif;
     --font-body: 'DM Sans', sans-serif;
-    --font-subheading: 'Aptos', sans-serif;
+    --font-subheading: 'DM Sans', sans-serif;
+}
+
+@font-face {
+    font-family: 'Brice Semiexpanded';
+    src: url('Brice Regular SemiExpanded.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -142,8 +150,9 @@ nav {
 }
 
 .logo img {
-    height: 40px;
+    height: 60px;
     width: auto;
+    margin: 5px 0;
 }
 
 /* Hero Section */
