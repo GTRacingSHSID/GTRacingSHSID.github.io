@@ -324,15 +324,21 @@ nav {
 
 .member-photo {
     width: 100%;
-    margin: 0 auto;
     overflow: hidden;
     border-radius: 0;
+    position: relative;
 }
 
 .member-photo img {
     width: 100%;
-    aspect-ratio: 1;
+    height: 100%;
     object-fit: cover;
+    object-position: center center;
+    transform: scale(1.15);
+}
+
+.team-member:hover .member-photo img {
+    transform: scale(1.15);
 }
 
 .team-member h4 {
@@ -723,13 +729,14 @@ footer {
 
 .member-photo img {
     width: 100%;
-    aspect-ratio: 1;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
+    object-position: center center;
+    transform: scale(1.15);
 }
 
 .team-member:hover .member-photo img {
-    transform: scale(1.05);
+    transform: scale(1.15);
 }
 
 .team-member h4 {
@@ -1071,13 +1078,14 @@ footer {
 
 .member-photo img {
     width: 100%;
-    aspect-ratio: 1;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
+    object-position: center center;
+    transform: scale(1.15);
 }
 
 .team-member:hover .member-photo img {
-    transform: scale(1.05);
+    transform: scale(1.15);
 }
 
 .team-member h4 {
