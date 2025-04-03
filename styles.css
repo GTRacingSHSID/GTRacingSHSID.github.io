@@ -2,13 +2,13 @@
 :root {
     --primary-color: #000000;
     --secondary-color: #212121;
-    --accent-color: #D4AF37;
+    --accent-color: #EBCF75;
     --text-color: #ffffff;
     --light-gray: #f0f0f0;
     --dark-gray: #333333;
     --font-heading: 'Brice Semiexpanded', serif;
-    --font-body: 'DM Sans', sans-serif;
-    --font-subheading: 'DM Sans', sans-serif;
+    --font-body: 'Arial', sans-serif;
+    --font-subheading: 'Arial', sans-serif;
 }
 
 @font-face {
