@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Animation for elements on scroll
     const animateElements = function() {
-        const elements = document.querySelectorAll('.team-member, .news-item, .partner, .animated-image, .stat-card, .car-overview-content');
+        const elements = document.querySelectorAll('.team-member, .partner, .animated-image, .car-overview-content');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -59,28 +59,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add animation class to CSS
     const style = document.createElement('style');
     style.textContent = `
-        .team-member, .news-item, .partner, .animated-image, .stat-card, .car-overview-content {
+        .team-member, .partner, .animated-image, .car-overview-content {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
         
-        .team-member.animated, .news-item.animated, .partner.animated, .animated-image.animated, .stat-card.animated, .car-overview-content.animated {
+        .team-member.animated, .partner.animated, .animated-image.animated, .car-overview-content.animated {
             opacity: 1;
             transform: translateY(0);
         }
         
-        .team-member:nth-child(2n), .news-item:nth-child(2n), .partner:nth-child(2n), .stat-card:nth-child(2n) {
+        .team-member:nth-child(2n), .partner:nth-child(2n) {
             transition-delay: 0.2s;
         }
         
-        .team-member:nth-child(3n), .news-item:nth-child(3n), .partner:nth-child(3n), .stat-card:nth-child(3n) {
+        .team-member:nth-child(3n), .partner:nth-child(3n) {
             transition-delay: 0.4s;
-        }
-        
-        .stat-card:nth-child(4n) {
-            transition-delay: 0.6s;
         }
     `;
     document.head.appendChild(style);
-}); 
+});

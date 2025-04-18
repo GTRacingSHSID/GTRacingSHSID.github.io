@@ -161,11 +161,25 @@
         
         .partner img {
             max-width: 80%;
-            max-height: 70px;
+            max-height: 100px;
             height: auto;
             width: auto;
             object-fit: contain;
             transition: all 0.3s ease;
+        }
+        
+        /* Make specific sponsor logos bigger */
+        .china-partners .partners-grid .partner:nth-child(2) img {
+            max-height: 110px; /* Larger size for SKT-NSL logo */
+        }
+        
+        .global-partners .partners-grid .partner:nth-child(2) img {
+            max-height: 110px; /* Larger size for Mouser Electronics logo */
+        }
+        
+        /* Ensure the principal partners are prominently sized */
+        .principal-partners .partners-grid .partner img {
+            max-height: 120px;
         }
         
         .partners-grid {
@@ -431,4 +445,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

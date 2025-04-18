@@ -125,8 +125,17 @@
             height: auto;
             transition: all 0.3s ease;
             object-fit: contain;
-            max-height: 60px;
+            max-height: 100px;
             opacity: 1;
+        }
+        
+        /* Make specific sponsor logos bigger */
+        .team-partners .sponsor-logo:nth-child(2) img {
+            max-height: 110px; /* Larger size for SKT-NSL logo */
+        }
+        
+        .team-suppliers .sponsor-logo:nth-child(4) img {
+            max-height: 110px; /* Larger size for Mouser Electronics logo */
         }
         
         .sponsor-logo:hover img {
@@ -830,59 +839,7 @@
                 }
             });
 
-            // Debug the chart
-            console.log('Chart initialization completed');
-            console.log('Chart instance:', currentChart);
-            
-            // Force chart redraw with timeout
-            setTimeout(() => {
-                console.log('Attempting chart redraw');
-                if (currentChart) {
-                    currentChart.update();
-                    console.log('Chart updated');
-                } else {
-                    console.log('Creating fallback chart');
-                    // Simple fallback chart
-                    new Chart(document.getElementById('budgetChart').getContext('2d'), {
-                        type: 'pie',
-                        data: {
-                            labels: ['RC Car', 'Public Relations / Business', 'Mod & Maintenance'],
-                            datasets: [{
-                                label: 'Budget (¥)',
-                                data: [8000, 6500, 10850],
-                                backgroundColor: [
-                                    'rgba(255, 215, 0, 0.8)',
-                                    'rgba(229, 183, 59, 0.8)',
-                                    'rgba(184, 134, 11, 0.8)'
-                                ],
-                                borderColor: [
-                                    'rgba(255, 215, 0, 1)',
-                                    'rgba(229, 183, 59, 1)',
-                                    'rgba(184, 134, 11, 1)'
-                                ],
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            plugins: {
-                                legend: {
-                                    position: 'right',
-                                    labels: {
-                                        color: '#ffffff',
-                                        font: {
-                                            family: 'DM Sans'
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    });
-                    console.log('Fallback chart created');
-                }
-            }, 1000);
         });
     </script>
 </body>
-</html> 
+</html>
