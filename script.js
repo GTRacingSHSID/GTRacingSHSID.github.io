@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'nav-cars': 'Cars',
             'nav-team': 'Team',
             'nav-racing': 'Racing',
+            'nav-innovations': 'Innovations',
             'nav-sponsors': 'Sponsors',
             
             // Homepage
@@ -120,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'nav-cars': '赛车展示',
             'nav-team': '团队介绍',
             'nav-racing': '赛事历程',
+            'nav-innovations': '创新成果',
             'nav-sponsors': '合作伙伴',
             
             // Homepage
